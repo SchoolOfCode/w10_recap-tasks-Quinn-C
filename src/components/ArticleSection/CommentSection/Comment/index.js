@@ -1,8 +1,18 @@
+import { Box } from '@chakra-ui/react';
 function Comment({comment}){
     return(
         <div className="comment">
-            <h4>{comment.name} says:</h4>
-            <p>{comment.text}</p>
+            <Box
+            mt='1'
+            fontWeight='semibold'
+            as='h4'
+            lineHeight='tight'
+            >
+            {comment.name} says:
+            </Box>
+            <Box>
+                {comment.text}
+            </Box>
         </div>
 )
 }

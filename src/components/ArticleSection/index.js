@@ -5,6 +5,7 @@ import LikeButton from './LikeButton';
 import css from './index.module.css';
 import '@fontsource/raleway/400.css';
 import '@fontsource/open-sans/700.css';
+import { Heading } from '@chakra-ui/react'
 
 function ArticleSection({articles}){
     const[likeTimes, setLikeTimes]=useState(0);
@@ -17,7 +18,9 @@ function ArticleSection({articles}){
             {articles.map((article) => {
             return (
                 <div>
-                    <h2 className={css.title}>{article.title}</h2>
+                    <Heading as='h4' size='lg'>
+                        {article.title} 
+                    </Heading>
                     <ArticleContent article={article} />
                     <LikeButton handleClick={handleClick} likeTimes={likeTimes}/>
                     <CommentSection article={article} />

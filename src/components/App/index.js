@@ -8,6 +8,10 @@ import {
   Container,
   Heading,
 } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
+
+const MotionBox = motion(Box)
 
 
 function App() {
@@ -15,7 +19,15 @@ function App() {
   
   return (
     <Container>
-      <Heading>WikiPigeon</Heading>
+      <Heading bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip='text'>WikiPigeon</Heading>
+        <MotionBox
+        height='40px'
+        bg='red.300'
+        drag='x'
+        dragConstraints={{ left: -100, right: 100 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+      />  
         <ArticleSection articles={articlesInfo} />
     </Container>
     

@@ -7,8 +7,10 @@ function ArticleParagraph({article}){
     return(
         <div>
             {article.paragraphs.map((paragraph) => (
-                <Text key={paragraph.id}>{paragraph.text}</Text>
+                <Text color='gray.500' isTruncatedkey={paragraph.id}>{paragraph.text}</Text>
             ))}
+            <br></br>
+            <br></br>
         </div>
     )
 }
