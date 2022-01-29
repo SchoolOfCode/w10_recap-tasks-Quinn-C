@@ -19,13 +19,13 @@ const MotionBox = motion(Box)
 
 function App() {
   const[articlesInfo, setArticlesInfo]=useState(articles);
-  const{isLoading}=useAuth0();
-  if(isLoading){
-    return<div>Loading...</div>
+  const{isAuthenticated}=useAuth0();
+
+  if(!isAuthenticated){
+    return<div><LoginButton /></div>
   }
   return (
     <div>
-      <LoginButton />
       <LogoutButton />
       <Container>
         <Heading bgGradient='linear(to-l, #7928CA, #FF0080)' bgClip='text'>WikiPigeon</Heading>
