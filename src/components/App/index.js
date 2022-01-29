@@ -12,13 +12,17 @@ import { Box } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import LoginButton from '../LoginButton';
 import LogoutButton from '../LogoutButton';
+import { useAuth0 } from "@auth0/auth0-react";
 
 const MotionBox = motion(Box)
 
 
 function App() {
   const[articlesInfo, setArticlesInfo]=useState(articles);
-  
+  const{isLoading}=useAuth0();
+  if(isLoading){
+    return<div>Loading...</div>
+  }
   return (
     <div>
       <LoginButton />
