@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import ArticleContent from './ArticleContent'
 import CommentSection from './CommentSection';
-import LikeButton from './LikeButton';
-import css from './index.module.css';
 import '@fontsource/raleway/400.css';
 import '@fontsource/open-sans/700.css';
 import { Heading } from '@chakra-ui/react'
@@ -22,8 +20,7 @@ function ArticleSection({articles}){
                         {article.title} 
                     </Heading>
                     <ArticleContent article={article} />
-                    <LikeButton handleClick={handleClick} likeTimes={likeTimes}/>
-                    <CommentSection article={article} />
+                    <CommentSection article={article} handleClick={()=> handleClick} likeTimes={likeTimes} />
                 </div>
                 
                 );
