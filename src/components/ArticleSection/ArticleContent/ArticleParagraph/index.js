@@ -1,10 +1,13 @@
+import '@fontsource/raleway/400.css';
+import '@fontsource/open-sans/700.css';
+import {Text} from '@chakra-ui/react'
 
 
 function ArticleParagraph({article}){
     return(
         <div>
             {article.paragraphs.map((paragraph) => (
-                <p key={paragraph.id}>{paragraph.text}</p>
+                <Text key={paragraph.id}>{paragraph.text}</Text>
             ))}
         </div>
     )

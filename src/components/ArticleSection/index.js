@@ -3,6 +3,8 @@ import ArticleContent from './ArticleContent'
 import CommentSection from './CommentSection';
 import LikeButton from './LikeButton';
 import css from './index.module.css';
+import '@fontsource/raleway/400.css';
+import '@fontsource/open-sans/700.css';
 
 function ArticleSection({articles}){
     const[likeTimes, setLikeTimes]=useState(0);
