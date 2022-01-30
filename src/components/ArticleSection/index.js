@@ -7,10 +7,7 @@ import { Heading } from '@chakra-ui/react';
 import { Routes, Route, Link } from "react-router-dom";
 
 function ArticleSection({articles}){
-    const[likeTimes, setLikeTimes]=useState(0);
-    function handleClick(){
-        setLikeTimes(likeTimes+1);
-    }
+    
     return(
         <article className="container">
     
@@ -24,7 +21,7 @@ function ArticleSection({articles}){
                         {article.title} 
                     </Heading>
                     <ArticleContent article={article} />
-                    <CommentSection article={article} handleClick={()=> handleClick} likeTimes={likeTimes} />
+                    <CommentSection article={article} />
                 </div>
                 
                 );
